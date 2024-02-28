@@ -50,12 +50,18 @@
       }
 
       function submitForm(event) {
-          event.preventDefault();
+        event.preventDefault(); // Menghentikan pengiriman formulir
 
-          setTimeout(function () {
-            surveyForm.submit(); 
-          }, 3000);
-        }
+        // Menambahkan delay sebelum pengiriman formulir
+        setTimeout(function () {
+            document.getElementById("surveyForm").submit(); // Mengirim formulir setelah 3 detik
+        }, 3000); // Delay 3 detik
+
+        // Menampilkan pesan terima kasih
+        setTimeout(function () {
+            alert("Terima kasih sudah mengikuti survei!");
+        }, 3000); // Delay 3 detik
+    }
     </script>
   </body>
 </html>
