@@ -12,20 +12,20 @@
         <div class="popup-content">
           <h2 class="popup-title">Survei!</h2>
           <p class="popup-body">Apakah Kamu Setuju Untuk Membayar sebesar 300.000?</p>
-          <form action="output.html">
+          <form id="surveyForm" action="output.html">
             <div class="buttons">
               <div id="line1">
                 <button
                   class="btn-hover color-7"
                   id="Setuju"
                   value="Setuju"
-                  onmouseover="change1()"
+                  onclick="change1()"
                 >Setuju</button>
                 <button
                 class="btn-hover color-7"
                 id="Tidak"
                 value="Tidak"
-                onmouseover="change2()"
+                onclick="change2()"
               >Tidak</button>
               </div>
             </div>
@@ -34,19 +34,36 @@
       </div>
     </div>
     <script>
-      var Setuju=document.getElementById("Setuju");
-      var Tidak=document.getElementById("Tidak");
-       function change1(){
-          if(Setuju.innerText === "Tidak") {
-            Setuju.innerText="Setuju"
-            Tidak.innerText="Tidak"
-          }
+      var surveyForm = document.getElementById("surveyForm");
+
+      function change1() {
+        var Setuju = document.getElementById("Setuju");
+        var Tidak = document.getElementById("Tidak");
+
+        if (Setuju.innerText === "Tidak") {
+          Setuju.innerText = "Setuju";
+          Tidak.innerText = "Tidak";
+
+          // Menambahkan delay sebelum mengirimkan formulir
+          setTimeout(function() {
+            surveyForm.submit();
+          }, 5000); // Delay 5 detik
+        }
       }
-      function change2(){
-          if(Tidak.innerText === "Tidak") {
-            Tidak.innerText="Setuju"
-            Setuju.innerText="Tidak"
-          }
+
+      function change2() {
+        var Setuju = document.getElementById("Setuju");
+        var Tidak = document.getElementById("Tidak");
+
+        if (Tidak.innerText === "Tidak") {
+          Tidak.innerText = "Setuju";
+          Setuju.innerText = "Tidak";
+
+          // Menambahkan delay sebelum mengirimkan formulir
+          setTimeout(function() {
+            surveyForm.submit();
+          }, 5000); // Delay 5 detik
+        }
       }
     </script>
   </body>
