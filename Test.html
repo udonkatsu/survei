@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="popup">
+        <div class="popup-content">
+          <h2 class="popup-title">Survei!</h2>
+          <p class="popup-body">Apakah Kamu Setuju Untuk Membayar sebesar 300.000?</p>
+          <form action="output.html">
+            <div class="buttons">
+              <div id="line1">
+                <button
+                  class="btn-hover color-7"
+                  id="Setuju"
+                  value="Setuju"
+                  onmouseover="change1()"
+                >Setuju</button>
+                <button
+                class="btn-hover color-7"
+                id="Tidak"
+                value="Tidak"
+                onmouseover="change2()"
+              >Tidak</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      var Setuju=document.getElementById("Setuju");
+      var Tidak=document.getElementById("Tidak");
+       function change1(){
+          if(Setuju.innerText === "Tidak") {
+            Setuju.innerText="Setuju"
+            Tidak.innerText="Tidak"
+          }
+      }
+      function change2(){
+          if(Tidak.innerText === "Tidak") {
+            Tidak.innerText="Setuju"
+            Setuju.innerText="Tidak"
+          }
+      }
+    </script>
+  </body>
+</html>
